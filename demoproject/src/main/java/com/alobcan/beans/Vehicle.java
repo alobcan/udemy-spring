@@ -3,6 +3,7 @@ package com.alobcan.beans;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
 public class Vehicle {
@@ -19,6 +20,11 @@ public class Vehicle {
     @PostConstruct
     public void initialize() {
         this.name = "Mazda";
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Destroying Vehicle Bean");
     }
 
     public void printHello() {

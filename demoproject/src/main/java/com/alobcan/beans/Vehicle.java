@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+/*@Component*/
 public class Vehicle {
     private String name;
 
@@ -17,7 +17,7 @@ public class Vehicle {
         this.name = name;
     }
 
-    @PostConstruct
+    /* @PostConstruct
     public void initialize() {
         this.name = "Mazda";
     }
@@ -25,7 +25,7 @@ public class Vehicle {
     @PreDestroy
     public void destroy() {
         System.out.println("Destroying Vehicle Bean");
-    }
+    } */
 
     public void printHello() {
         System.out.println("Printing Hello from Component Vehicle Bean");

@@ -3,7 +3,6 @@ package com.alobcan.config;
 import com.alobcan.beans.Person;
 import com.alobcan.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -17,10 +16,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    public Person person() {
+    public Person person(Vehicle vehicle) {
         Person person = new Person();
         person.setName("Lucy");
-        person.setVehicle(vehicle());
+        person.setVehicle(vehicle);
         return person;
     }
 }

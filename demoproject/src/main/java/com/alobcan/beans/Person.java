@@ -1,16 +1,20 @@
 package com.alobcan.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Person {
-    public Person() {
-        System.out.println("Person bean created by Spring");
-    }
 
     private String name = "Lucy";
-    private Vehicle vehicle;
+    private final Vehicle vehicle;
+
+    @Autowired
+    public Person(Vehicle vehicle) {
+        System.out.println("Person bean created by Spring");
+        this.vehicle =  vehicle;
+    }
 
     public String getName() {
         return name;
@@ -22,10 +26,5 @@ public class Person {
 
     public Vehicle getVehicle() {
         return vehicle;
-    }
-
-    @Autowired
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
     }
 }

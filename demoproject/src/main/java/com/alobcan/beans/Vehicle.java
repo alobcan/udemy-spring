@@ -1,11 +1,14 @@
 package com.alobcan.beans;
 
+import com.alobcan.services.VehicleServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
+@Component
 public class Vehicle {
+
+    @Autowired
+    private VehicleServices vehicleServices;
 
     public Vehicle() {
         System.out.println("Vehicle bean created by Spring");
@@ -20,12 +23,13 @@ public class Vehicle {
         this.name = name;
     }
 
-    public void printHello() {
-        System.out.println("Printing Hello from Component Vehicle Bean");
-    }
-
     @Override
     public String toString() {
         return "Vehicle name is - " + name;
+    }
+
+    public void turnOnCar() {
+        vehicleServices.turnOnSpeakers();
+        vehicleServices.move();
     }
 }

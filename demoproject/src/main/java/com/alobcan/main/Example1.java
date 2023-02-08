@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Example1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         VehicleServices vehicleServices = context.getBean(VehicleServices.class);

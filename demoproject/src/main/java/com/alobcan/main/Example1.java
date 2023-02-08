@@ -13,13 +13,8 @@ public class Example1 {
     public static void main(String[] args) {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        VehicleServices vehicleServices1 = context.getBean(VehicleServices.class);
-        VehicleServices vehicleServices2 = context.getBean("vehicleServices", VehicleServices.class);
-
-        System.out.println("Hashcode of vehicleService1: " + vehicleServices1.hashCode());
-        System.out.println("Hashcode of vehicleService2: " + vehicleServices2.hashCode());
-        if (vehicleServices2 == vehicleServices1) {
-            System.out.println("Vehicle Service is a singleton");
-        }
+        System.out.println("Before Person bean call");
+        Person person = context.getBean(Person.class);
+        System.out.println("After person bean call");
     }
 }

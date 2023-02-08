@@ -2,6 +2,7 @@ package com.alobcan.services;
 
 import com.alobcan.beans.Speakers;
 import com.alobcan.beans.Tyres;
+import com.alobcan.interfaces.LogAspect;
 import com.alobcan.models.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class VehicleServices {
     @Autowired
     public Tyres tyres;
 
+    @LogAspect
     public String playMusic(boolean vehicleStarted, Song song) {
        return speakers.makeSound(song);
     }

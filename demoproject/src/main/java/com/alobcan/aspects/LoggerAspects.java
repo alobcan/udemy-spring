@@ -32,6 +32,17 @@ public class LoggerAspects {
         logger.info(joinPoint.getSignature().toString() + "Method execution end");
     }
 
+    @Around("@annotation(com.alobcan.interfaces.LogAspect)")
+    public void logWithAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.getSignature().toString() + "Method execution start");
+        Instant start = Instant.now();
+        joinPoint.proceed();
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+        logger.info(String.format("The method took %1$s ms to execute", timeElapsed));
+        logger.info(joinPoint.getSignature().toString() + "Method execution end");
+    }
+
     @AfterThrowing(value = "execution(* com.alobcan.services.*.*(..))", throwing = "ex")
     public void logException(JoinPoint joinPoint, Exception ex) {
         logger.log(Level.SEVERE, joinPoint.getSignature() + "An exception thrown with the help of @AfterThrowing" +

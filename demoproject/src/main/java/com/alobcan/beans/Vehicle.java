@@ -28,8 +28,4 @@ public class Vehicle {
         return "Vehicle name is - " + name;
     }
 
-    public void turnOnCar() {
-        vehicleServices.turnOnSpeakers();
-        vehicleServices.move();
-    }
 }

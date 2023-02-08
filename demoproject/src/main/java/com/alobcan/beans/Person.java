@@ -1,7 +1,6 @@
 package com.alobcan.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -28,9 +27,5 @@ public class Person {
 
     public Vehicle getVehicle() {
         return vehicle;
-    }
-
-    public void useCar() {
-        vehicle.turnOnCar();
     }
 }

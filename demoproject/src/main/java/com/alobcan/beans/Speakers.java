@@ -1,5 +1,7 @@
 package com.alobcan.beans;
 
+import com.alobcan.models.Song;
+
 public interface Speakers {
-    void makeSound();
+    String  makeSound(Song song);
 }

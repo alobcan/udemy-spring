@@ -4,7 +4,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BridgestoneTyres implements Tyres {
-    public void rotate() {
-        System.out.println("Bridgestone tyres rotate");
+    public String rotate() {
+        return  "Bridgestone tyres rotate";
+    }
+
+    public String stop() {
+        return "Bridgestone tyres Stop";
     }
 }

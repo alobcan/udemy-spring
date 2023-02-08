@@ -1,5 +1,7 @@
 package com.alobcan.beans;
 
 public interface Tyres {
-    void rotate();
+    String rotate();
+
+    String stop();
 }
